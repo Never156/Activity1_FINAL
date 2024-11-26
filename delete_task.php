@@ -1,6 +1,6 @@
 <?php
 include 'db_connect.php';
-
+//delete functionality
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $stmt = $pdo->prepare("DELETE FROM tasks WHERE id = ?");
