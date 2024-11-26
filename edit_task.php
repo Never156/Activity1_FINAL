@@ -1,12 +1,13 @@
 <?php
 include 'db_connect.php';
-
+//Added funtionality to modify task
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $stmt = $pdo->prepare("SELECT * FROM tasks WHERE id = ?");
     $stmt->execute([$id]);
     $task = $stmt->fetch();
 }
+//Update condition to modify
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST['id'];
